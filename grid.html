@@ -1,0 +1,31 @@
+﻿<div ng-controller="GridController as vm" class="container" style="margin:100px,100px,100px,100px">
+    {{vm.name}}
+    <div class="row">
+        <form>
+            <!--<label for="civilite" class="control-label col-md-4 col-sm-4 col-xs-12">Civilité<span class="required">*</span> </label>-->
+            <div class="col-lg-offset-4 col-md-4 col-sm-4 col-xs-4">
+                <select id="civilite"
+                        kendo-drop-down-list
+                        k-options="vm.dropdownOptions"
+                        ng-model="vm.dropDownListSelectedValue"
+                        k-on-change="vm.getData()"
+                        class="col-md-4 col-xs-4"></select>
+            </div>
+            <!--<div class="form-group col-md-4 col-sm-4 col-xs-4">
+                <button class="k-button" ng-click="vm.ok()">OK</button>
+            </div-->
+            <div class="form-group col-md-4 col-sm-4 col-xs-4">
+                <button class="k-button" ng-click="vm.selectAll()">select all</button>
+            </div>
+            <div class="form-group col-lg-12 col-md-12">
+                <kendo-grid id="grid"
+                           
+                            k-options="vm.gridOptions">
+                    <kendo-grid />
+            </div>
+            <div class="form-group col-md-12">
+                <button class="k-button" ng-click="vm.send()">send</button>
+            </div>
+        </form>
+    </div>
+</div>
